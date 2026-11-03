@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center | AirBreakfast</title>
+    <meta name="description" content="Find help with searching AirBreakfast demo listings and sending a reservation request.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to help content</a>
+    <header class="header">
+        <div class="container">
+            <nav class="help-navbar" aria-label="Main navigation">
+                <a class="logo-text" href="index.html">AirBreakfast</a>
+                <a class="btn-link" href="index.html">Back to stays</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="help-page container" id="main" tabindex="-1">
+        <header class="help-intro">
+            <p class="help-eyebrow">Customer support</p>
+            <h1>How can we help?</h1>
+            <p>Find answers about searching, filters, saved stays, and reservation requests.</p>
+            <p class="help-demo-notice"><strong>AirBreakfast is a demo.</strong> It does not provide live availability or confirmed bookings.</p>
+        </header>
+
+        <section class="help-topics" aria-label="Help topics">
+            <article class="help-topic">
+                <h2>Finding a stay</h2>
+                <p>Search by destination, dates, and guest count. You can also narrow the sample listings by category, price, property type, amenities, bedrooms, and bathrooms.</p>
+                <p>Date search uses each demo listing’s minimum-stay rule. It does not check a live availability calendar.</p>
+                <a href="index.html#searchTrigger">Go to search</a>
+            </article>
+
+            <article class="help-topic">
+                <h2>Saving favorites</h2>
+                <p>Use the heart button on a listing to save or remove a stay. Signed-out favorites are stored in this browser; when you sign in, saved stays sync to your account and are available on other devices.</p>
+            </article>
+
+            <article class="help-topic">
+                <h2>Reservation requests</h2>
+                <p>The request form checks your dates and guest count, then sends the details you enter—including your email—to Formspree.</p>
+                <p>Submitting a request is not a reservation or confirmation. Do not include sensitive information.</p>
+            </article>
+
+            <article class="help-topic">
+                <h2>Accounts and sign-in</h2>
+                <p>Email/password accounts use Supabase Auth after the site owner configures a project. If email confirmation is enabled, follow the confirmation link before signing in. Use “Forgot password?” to request a reset link.</p>
+                <p>Authentication is available after the site owner configures a Supabase project. Only email/password sign-in is supported; social sign-in is not enabled.</p>
+            </article>
+        </section>
+
+        <section class="help-faq" aria-labelledby="faqHeading">
+            <h2 id="faqHeading">Frequently asked questions</h2>
+            <details>
+                <summary>Why can’t I find a stay for my dates?</summary>
+                <p>The sample catalog filters dates using minimum-stay rules, not live availability. Try a longer stay or remove the dates.</p>
+            </details>
+            <details>
+                <summary>Did I book a place after sending a request?</summary>
+                <p>No. The form sends a request through Formspree, but this demo does not confirm, charge for, or manage reservations.</p>
+            </details>
+            <details>
+                <summary>Can I recover favorites on another device?</summary>
+                <p>Yes, if you were signed in when you saved them. Sign in to the same account on another device to access synced stays. Favorites saved while signed out remain in that browser.</p>
+            </details>
+        </section>
+
+        <p class="help-back-link"><a class="btn-primary" href="index.html">Browse demo stays</a></p>
+    </main>
+</body>
+</html>

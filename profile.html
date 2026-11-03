@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My profile | AirBreakfast</title>
+    <meta name="description" content="Manage your AirBreakfast profile, preferences, and saved stays.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="supabase-config.js"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to profile</a>
+    <header class="header">
+        <div class="container">
+            <nav class="help-navbar" aria-label="Main navigation">
+                <a class="logo-text" href="index.html">AirBreakfast</a>
+                <a class="btn-link" href="index.html">Browse stays</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="profile-page container" id="main" tabindex="-1">
+        <header class="profile-heading">
+            <p class="help-eyebrow">Your account</p>
+            <h1>My profile</h1>
+            <p>Update your profile and preferences, and revisit stays you have saved.</p>
+        </header>
+
+        <p class="profile-message" id="profileMessage" role="status" aria-live="polite"></p>
+        <section id="signedOutPanel" class="profile-panel" hidden>
+            <h2>Sign in to manage your profile</h2>
+            <p>Your saved stays and profile preferences are linked to your AirBreakfast account.</p>
+            <a class="btn-primary profile-action" href="index.html?auth=login">Go to sign in</a>
+        </section>
+
+        <div id="profileContent" hidden>
+            <section class="profile-panel" aria-labelledby="profileSettingsHeading">
+                <h2 id="profileSettingsHeading">Profile and preferences</h2>
+                <p class="profile-email" id="profileEmail"></p>
+                <form id="profileForm" class="profile-form">
+                    <div class="profile-field">
+                        <label for="displayName">Display name</label>
+                        <input id="displayName" name="displayName" type="text" maxlength="80" autocomplete="name" required>
+                    </div>
+                    <div class="profile-field">
+                        <label for="preferredCurrency">Preferred currency</label>
+                        <select id="preferredCurrency" name="preferredCurrency">
+                            <option value="USD">US dollar (USD)</option>
+                            <option value="CAD">Canadian dollar (CAD)</option>
+                            <option value="EUR">Euro (EUR)</option>
+                            <option value="GBP">British pound (GBP)</option>
+                            <option value="THB">Thai baht (THB)</option>
+                        </select>
+                    </div>
+                    <div class="profile-field">
+                        <label for="travelStyle">Travel preference</label>
+                        <select id="travelStyle" name="travelStyle">
+                            <option value="any">No preference</option>
+                            <option value="beach">Beach stays</option>
+                            <option value="city">City stays</option>
+                            <option value="nature">Nature and cabins</option>
+                            <option value="luxury">Luxury stays</option>
+                        </select>
+                    </div>
+                    <label class="profile-checkbox">
+                        <input type="checkbox" id="tripUpdates" name="tripUpdates">
+                        <span>I'd like occasional product updates by email (preference only; emails are not sent)</span>
+                    </label>
+                    <button class="btn-primary profile-action" id="saveProfileBtn" type="submit">Save profile</button>
+                </form>
+            </section>
+
+            <section class="profile-panel saved-stays-panel" aria-labelledby="savedStaysHeading">
+                <div class="saved-stays-heading">
+                    <div>
+                        <h2 id="savedStaysHeading">Saved stays</h2>
+                        <p>Your saved list is available when you sign in on this account.</p>
+                    </div>
+                    <a href="index.html" class="host-text-link">Explore stays</a>
+                </div>
+                <div class="saved-stays-grid" id="savedStaysList"></div>
+                <p class="saved-stays-empty" id="savedStaysEmpty" hidden>You haven't saved any stays yet. Browse listings and select the heart to save one.</p>
+            </section>
+        </div>
+    </main>
+
+    <script type="module" src="profile.js"></script>
+</body>
+</html>
